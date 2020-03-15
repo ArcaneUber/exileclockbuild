@@ -1,0 +1,36 @@
+<AnimatedActor>
+	<Info CreatedBy="Unknown" CreatedOn="2/7/2020 12:10:57 AM" Version="64" Fps="45"/>
+	<Content>
+		<Spritesheets>
+			<Spritesheet Path="quarantine_animshadow_1.png" Id="0"/>
+			<Spritesheet Path="quarantine_animshadow_2.png" Id="1"/>
+		</Spritesheets>
+		<Layers>
+			<Layer Name="gearsmoving1" Id="0" SpritesheetId="0"/>
+			<Layer Name="clockhand" Id="1" SpritesheetId="1"/>
+		</Layers>
+		<Nulls/>
+		<Events/>
+	</Content>
+	<Animations DefaultAnimation="Idle">
+		<Animation Name="Idle" FrameNum="101" Loop="true">
+			<RootAnimation>
+				<Frame XPosition="-183" YPosition="-104" XScale="50" YScale="50" Delay="5" Visible="true" RedTint="255" GreenTint="255" BlueTint="255" AlphaTint="180" RedOffset="0" GreenOffset="0" BlueOffset="0" Rotation="0" Interpolated="false"/>
+			</RootAnimation>
+			<LayerAnimations>
+				<LayerAnimation LayerId="0" Visible="true">
+					<Frame XPosition="353" YPosition="0" XPivot="391" YPivot="312" XCrop="-33" YCrop="-18" Width="598" Height="600" XScale="275" YScale="275" Delay="5" Visible="true" RedTint="255" GreenTint="255" BlueTint="255" AlphaTint="200" RedOffset="0" GreenOffset="0" BlueOffset="0" Rotation="0" Interpolated="false"/>
+				</LayerAnimation>
+				<LayerAnimation LayerId="1" Visible="true">
+					<Frame XPosition="80" YPosition="-105" XPivot="346" YPivot="315" XCrop="-3" YCrop="17" Width="719" Height="679" XScale="200" YScale="200" Delay="25" Visible="true" RedTint="255" GreenTint="255" BlueTint="255" AlphaTint="180" RedOffset="0" GreenOffset="0" BlueOffset="0" Rotation="0" Interpolated="true"/>
+					<Frame XPosition="80" YPosition="-105" XPivot="346" YPivot="315" XCrop="-3" YCrop="17" Width="719" Height="679" XScale="200" YScale="200" Delay="25" Visible="true" RedTint="255" GreenTint="255" BlueTint="255" AlphaTint="180" RedOffset="0" GreenOffset="0" BlueOffset="0" Rotation="90" Interpolated="true"/>
+					<Frame XPosition="80" YPosition="-105" XPivot="346" YPivot="315" XCrop="-3" YCrop="17" Width="719" Height="679" XScale="200" YScale="200" Delay="25" Visible="true" RedTint="255" GreenTint="255" BlueTint="255" AlphaTint="180" RedOffset="0" GreenOffset="0" BlueOffset="0" Rotation="180" Interpolated="true"/>
+					<Frame XPosition="80" YPosition="-105" XPivot="346" YPivot="315" XCrop="-3" YCrop="17" Width="719" Height="679" XScale="200" YScale="200" Delay="25" Visible="true" RedTint="255" GreenTint="255" BlueTint="255" AlphaTint="180" RedOffset="0" GreenOffset="0" BlueOffset="0" Rotation="270" Interpolated="true"/>
+					<Frame XPosition="80" YPosition="-105" XPivot="346" YPivot="315" XCrop="-3" YCrop="17" Width="719" Height="679" XScale="200" YScale="200" Delay="1" Visible="true" RedTint="255" GreenTint="255" BlueTint="255" AlphaTint="180" RedOffset="0" GreenOffset="0" BlueOffset="0" Rotation="358" Interpolated="true"/>
+				</LayerAnimation>
+			</LayerAnimations>
+			<NullAnimations/>
+			<Triggers/>
+		</Animation>
+	</Animations>
+</AnimatedActor>
