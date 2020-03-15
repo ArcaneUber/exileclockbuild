@@ -1,0 +1,13 @@
+<players root="gfx/characters/costumes/" 
+         portraitroot="gfx/ui/boss/" 
+         nameimageroot="gfx/ui/boss/" 
+         bigportraitroot="gfx/ui/stage/">
+	<player name="Agnes" skin="Character_Agnes.png" black="2" armor="6" bombs="0" 
+          nameimage="PlayerName_Agnes.png" 
+          portrait="PlayerPortrait_Agnes.png" 
+          bigportrait="PlayerPortraitBig_Agnes.png" skinColor="-1" />
+	<player name="Rachel" skin="Character_Rachel.png" hp="6" bombs="0" 
+          nameimage="PlayerName_Rachel.png" 
+          portrait="PlayerPortrait_Rachel.png" 
+          bigportrait="PlayerPortraitBig_Rachel.png" skinColor="-1" />
+</players>

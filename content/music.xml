@@ -1,0 +1,23 @@
+<music root="music/">
+	<track name="Clockwork Boss" path="modded/Clockwork Boss.ogg" loop="true" />
+	<track name="Clockwork Boss Over" path="modded/Clockwork Boss Over.ogg" loop="false" />
+	<track name="Boss Over" path="modded/Boss Over.ogg" loop="true" />
+	<track name="Don't Touch It" path="modded/cassetteroom.ogg" loop="true" />
+	<track name="Aztec" path="modded/Brasshead.ogg" loop="true" />
+	
+	<track name="Clockwork Boss Intro" path="modded/Clockwork Boss Intro.ogg" loop="false" />
+	
+	<track name="Quarantine" path="modded/Quarantine.ogg" loop="true" />
+	<track name="Styx" path="modded/Styx.ogg" loop="true" />
+	
+	<track name="Tidal Entrance" path="modded/cassetteroom.ogg" loop="true" />
+	<track name="FloorIntro1" path="modded/transitionscreen/Tidal (Scattering Light - Hammock).ogg" loop="false" />
+	<track name="FloorIntro2" path="modded/transitionscreen/Clockwork (Always Before Your Eyes - Hammock).ogg" loop="false" />
+	
+	<track name="Heart" path="modded/Heart.ogg" layerintro="modded/Tidal Layer Intro.ogg"  layer="modded/Tidal Layer Intro.ogg" loop="true" />
+	
+	
+	<track name="Flooded Caves" intro="Afterbirth/Kave Diluvii (Flooded Caves)Intro.ogg" path="Afterbirth/Kave Diluvii (Flooded Caves) loop.ogg" layerintro="Afterbirth/Kave Diluvii (Flooded Caves)Intro silent.ogg" layer="Afterbirth/Kave Diluvii (Flooded Caves) Layer.ogg" loop="true" />
+	<track name="Scarred Womb" intro="Afterbirth/Cicatrix (Scarred Womb) Intro.ogg" path="Afterbirth/Cicatrix (Scarred Womb) Loop.ogg" layerintro="Afterbirth/Cicatrix (Scarred Womb) Intro silent.ogg" layer="Afterbirth/Cicatrix (Scarred Womb) Layer.ogg" loop="true" />
+
+</music>

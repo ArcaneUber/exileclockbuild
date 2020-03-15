@@ -1,0 +1,25 @@
+<costumes anm2root="gfx/characters/">
+	<costume anm2path="vulknut_active.anm2" type="none" />
+	<costume anm2path="vulknut_inactive.anm2" type="none" />
+	<costume anm2path="golem_head.anm2" type="none" />
+	<costume anm2path="charmofgreed.anm2" type="none" />
+	<costume anm2path="golem_body.anm2" type="none" />
+	<costume anm2path="rachel_body.anm2" type="none" />
+	<costume anm2path="choco_milk.anm2" type="none" />
+	<costume anm2path="creed_head.anm2" type="none" />
+	<costume anm2path="tuberc_head.anm2" type="none" />
+	<costume anm2path="creed_body.anm2" type="none" />
+	<costume anm2path="corinth_robe.anm2" type="none" />
+	<costume anm2path="scatboy_head.anm2" type="none" />
+	<costume anm2path="twofinger_head.anm2" skinColor="1" overwriteColor="true" type="none" />
+	<costume anm2path="twofinger_body.anm2" isFlying="true" type="none" />
+	<costume anm2path="fate_temp.anm2" isFlying="true" type="none" />
+	<costume anm2path="darkmitre.anm2" type="none" />
+	<costume anm2path="agnes_hair.anm2" type="none" priority="355" />
+	<costume anm2path="rachel_hair.anm2" type="none" priority="200" />
+	<costume anm2path="horus_glow.anm2" type="none" />
+	
+	<costume anm2path="artemis_head.anm2" priority="29" type="none" />
+	<costume anm2path="artemis_body.anm2" type="none" />
+	
+</costumes>

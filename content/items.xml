@@ -1,0 +1,46 @@
+<items gfxroot="gfx/items/" version="1">
+	<active description="Antioch's holy bombardment" gfx="newitem_holyhandgrenade.png" name="Holy Hand Grenade" maxcharges="0" devilprice="1" />
+	<passive cache="" description="Poop of consecration" gfx="newitem_holycrap.png" name="Holy Crap" />
+	<passive cache="" description="Damage reflection" gfx="newitem_baptism.png" name="Baptism" />
+	<passive cache="" description="Your faith is rewarded" gfx="newitem_devotion.png" name="Devotion" />
+	<passive cache="damage flying firedelay" description="Evil up" gfx="newitem_twofingerswear.png" name="Two-Finger Swear" blackhearts="8" devilprice="2" />
+	<passive cache="damage" description="HP + DMG up" gfx="newitem_crosscookies.png" name="Cross-shaped Cookies" hearts="2" maxhearts="2" />
+	<passive cache="damage firedelay" description="DMG + Tears up" gfx="newitem_lettertojesus.png" name="A Letter to Jesus" />
+	<passive cache="" description="Count your blessings" gfx="newitem_heresy.png" name="Heresy" blackhearts="4" devilprice="2" />
+	<passive cache="firedelay" description="Your soul feels stronger" gfx="newitem_lightsacrament.png" name="Light Sacrament" hearts="2" />
+	
+	
+	<passive cache="damage firedelay luck shotspeed" description="All stats up" gfx="newitem_chrism.png" name="Chrism" hearts="2" maxhearts="2" />
+	<passive cache="" description="The lord is by your side" gfx="newitem_divineint.png" name="Divine Intervention" />
+	<passive cache="" description="What's in it?" gfx="newitem_sippycup.png" name="Sippy Cup" hearts="2" maxhearts="2" />
+	<passive cache="" description="HP up" gfx="item_leftovers.png" name="Leftovers" hearts="2" maxhearts="2" />
+	<passive cache="" description="You feel greedy!" gfx="item_charmofgreed.png" name="Charm of Greed" />
+	<passive cache="" description="Holy laser volley" gfx="newitem_creed.png" name="Creed" />
+	<passive cache="damage firedelay tearcolor" description="Incontinence" gfx="newitem_scatboy.png" name="Scat Shot" />
+	<familiar description="It needs fuel!" gfx="newitem_ironlantern.png" name="Dad's Lantern" />
+	<familiar description="It wants to show me something" gfx="newitem_mysteriouseye.png" name="Mysterious Eye" />
+	<familiar description="All hail" gfx="newitem_crosier.png" name="Crosier" />
+	<familiar description="Calming ashes" gfx="newitem_incense.png" name="Incense" />
+	<familiar cache="firedelay shotspeed range damage" description="Your eternal reward.." gfx="newitem_misericorde3.png" name="Misericorde" />
+	<active description="Dead is better." gfx="newitem_petcemetery.png" name="Pet Cemetery" maxcharges="0" devilprice="1" />
+	<active description="Mouse controlled ambush" gfx="newitem_lectionary.png" name="Lectionary" maxcharges="1" devilprice="1" cooldown="5" />
+	<active description="Allan please add details" gfx="debugitem.png" name="Testing Item" maxcharges="0" devilprice="1" />
+	<active description="Reusable suicide" gfx="newitem_stabbedcrown.png" name="Stabbed Crown" maxcharges="4" devilprice="1" />
+	<passive cache="damage firedelay range" description="Stone-cold." gfx="newitem_ambrosia.png" name="Golem" devilprice="2" />
+	<passive cache="firedelay damage" description="Cough up your lungs!" gfx="newitem_tuberculosis.png" name="Tuberculosis" />
+	<passive cache="" description="Ancestral protection" gfx="newitem_corinthcloak.png" name="Corinthian Cloak" devilprice="2" />
+	<passive cache="" description="Ancient manipulation" gfx="newitem_eyeofhorus.png" name="Eye of Horus" devilprice="2" />
+	<passive cache="damage" description="Nature's wrath" gfx="newitem_artemis.png" name="Artemis" devilprice="2" />
+	<passive cache="" description="Wreak havoc, reap rewards" gfx="newitem_pathos.png" name="Pathos" />
+	<passive cache="" description="Profit from perfection" gfx="newitem_ethos.png" name="Ethos" />
+	<passive cache="" description="Judgement" gfx="newitem_logos.png" name="Logos" />
+	<passive cache="" description="Embrace the rage" gfx="newitem_vulknut.png" name="Valknut" />
+	<active description="Fillet the weak" gfx="newitem_izmel.png" name="Izmel" maxcharges="4" />
+
+	<trinket cache="" description="You're excused." gfx="trinket_tardyslip.png" name="Tardy Slip" />
+	<trinket cache="" description="Nuts and bolts!" gfx="trinket_toolbox.png" name="Toolbox" />
+	<passive cache="" description="Blood armor" gfx="newitem_darksigil.png" name="Dark Sigil" devilprice="2" />
+	<active description="Proceed... with caution" gfx="newitem_feverdream.png" name="Fever Dream" maxcharges="6" devilprice="1" />
+	
+	
+</items>

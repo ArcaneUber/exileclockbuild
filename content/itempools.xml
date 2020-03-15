@@ -1,0 +1,26 @@
+<ItemPools>
+	<Pool Name="angel">
+	    <Item Name="Holy Hand Grenade" Weight="1.3" DecreaseBy="0.5" RemoveOn="0.1" />
+		<Item Name="Valknut" Weight="1.3" DecreaseBy="0.5" RemoveOn="0.1" />
+		<Item Name="Divine Intervention" Weight="1.3" DecreaseBy="0.5" RemoveOn="0.1" />
+		<Item Name="Chrism" Weight="1.3" DecreaseBy="0.5" RemoveOn="0.1" />
+		<Item Name="Crosier" Weight="1.3" DecreaseBy="0.5" RemoveOn="0.1" />
+		<Item Name="Ethos" Weight="1.3" DecreaseBy="0.5" RemoveOn="0.1" />
+		<Item Name="Pathos" Weight="1.3" DecreaseBy="0.5" RemoveOn="0.1" />
+	</Pool>
+	<Pool Name="boss">
+	    <Item Name="Leftovers" Weight="1" DecreaseBy="0.5" RemoveOn="0.1" />
+	</Pool>
+	<Pool Name="shop">
+		<Item Name="Chrism" Weight="1.3" DecreaseBy="0.5" RemoveOn="0.1" />
+	</Pool>
+	<Pool Name="devil">
+	    <Item Name="Two-Finger Swear" Weight="1.2" DecreaseBy="0.5" RemoveOn="0.1" />
+	</Pool>
+	<Pool Name="treasure">
+	    <Item Name="Scat Shot" Weight="1.3" DecreaseBy="0.5" RemoveOn="0.1" />
+		<Item Name="Valknut" Weight="1.3" DecreaseBy="0.5" RemoveOn="0.1" />
+		<Item Name="Divine Intervention" Weight="1.3" DecreaseBy="0.5" RemoveOn="0.1" />
+		<Item Name="Tuberculosis" Weight="1.3" DecreaseBy="0.5" RemoveOn="0.1" />
+	</Pool>
+</ItemPools>

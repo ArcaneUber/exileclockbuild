@@ -1,0 +1,222 @@
+<sounds root="sfx/">
+	<sound name="Pirate Whistle">
+	<sample path="bosswhistle.wav" weight="1"/>
+	</sound>
+	<sound name="Bell">
+	<sample path="bellbuoy.wav" weight="1"/>
+	</sound>
+	<sound name="Head Spin">
+	<sample path="spin_loop.wav" weight="1"/>
+	</sound>
+	<sound name="Whoosh">
+	<sample path="whoosh.wav" weight="1"/>
+	</sound>
+	<sound name="Small Bell">
+	<sample path="beedlebell.wav" weight="1"/>
+	</sound>
+	<sound name="Crane Chain">
+	<sample path="clockwork_crane.wav" weight="1"/>
+	</sound>
+	<sound name="LADIE">
+	<sample path="LABOSSDIE.wav" weight="1"/>
+	</sound>
+	<sound name="LAHIT">
+	<sample path="LABOSSHIT.wav" weight="1"/>
+	</sound>
+	<sound name="Rocket">
+	<sample path="firework.wav" weight="1"/>
+	</sound>
+	<sound name="Beeping">
+	<sample path="rapidbeep.wav" weight="1"/>
+	</sound>
+	<sound name="Alarm1">
+	<sample path="quarantine/ALARM_1.wav" weight="1"/>
+	</sound>
+	<sound name="Air Hiss">
+	<sample path="airhiss.wav" weight="1"/>
+	</sound>
+	<sound name="Water">
+	<sample path="splash.wav" weight="1"/>
+	</sound>
+	<sound name="Water2">
+	<sample path="splash2.wav" weight="1"/>
+	</sound>
+	<sound name="Gear Turn">
+	<sample path="gear_turning.wav" weight="1"/>
+	</sound>
+	<sound name="Chant">
+	<sample path="chantholy.wav" weight="1"/>
+	</sound>
+	<sound name="Electrical">
+	<sample path="scifi.wav" weight="1"/>
+	</sound>
+	<sound name="Aesthetic">
+	<sample path="aesthetic.wav" weight="1"/>
+	</sound>
+	<sound name="Hallucination">
+	<sample path="deliriumdeathcard.wav" weight="1"/>
+	</sound>
+	<sound name="Sparkle">
+	<sample path="sparkle2.wav" weight="1"/>
+	</sound>
+	<sound name="Holy2">
+	<sample path="superholy.wav" weight="1"/>
+	</sound>
+	<sound name="Flintlock">
+	<sample path="flintlock.wav" weight="1"/>
+	</sound>
+	<sound name="Gun spin">
+	<sample path="gunspinandback.wav" weight="1"/>
+	</sound>
+	<sound name="TidalDoor">
+	<sample path="tidal_door_jingle.wav" weight="1"/>
+	</sound>
+	<sound name="ClockDoor">
+	<sample path="Clockwork_Door_Opens_Stinger.wav" weight="1"/>
+	</sound>
+	<sound name="SnapShut">
+	<sample path="snap_shut.wav" weight="1"/>
+	</sound>
+	<sound name="DieSquish">
+	<sample path="die_squish.wav" weight="1"/>
+	</sound>
+	<sound name="Throw Whoosh">
+	<sample path="throwrang.wav" weight="1"/>
+	</sound>
+	<sound name="Glass Break">
+	<sample path="clockwork/environment/glass_break1.wav" weight="1"/>
+	<sample path="clockwork/environment/glass_break2.wav" weight="2"/>
+	</sound>
+	<sound name="Insect Swarm Custom">
+	<sample path="clockwork/insect swarm dummy.wav" weight="1"/>
+	</sound>
+	<sound name="Stab">
+	<sample path="bone snap.wav" weight="1"/>
+	<sample path="bone heart.wav" weight="2"/>
+	<sample path="bone drop.wav" weight="3"/>
+	<sample path="boil hatch.wav" weight="4"/>
+	</sound>
+	<sound name="Robotic">
+	<sample path="robotic_1.wav" weight="1"/>
+	<sample path="robotic_2.wav" weight="2"/>
+	<sample path="robotic_silent.wav" weight="3"/>
+	</sound>
+	<sound name="Conveyor Belt">
+	<sample path="quarantine/conveyorbelt_loop.wav" weight="1"/>
+	</sound>
+	<sound name="Buzzer">
+	<sample path="quarantine/bosses/theshackle/buzzer.wav" weight="1"/>
+	</sound>
+	<sound name="Laser Pew">
+	<sample path="quarantine/bosses/theshackle/laser_fire.wav" weight="1"/>
+	</sound>
+	<sound name="Reflect">
+	<sample path="quarantine/bosses/theplague/reflect.wav" weight="1"/>
+	</sound>
+	<sound name="Super Vial">
+	<sample path="quarantine/bosses/theplague/supervial.wav" weight="1"/>
+	</sound>
+	<sound name="Vial Drop">
+	<sample path="quarantine/bosses/theplague/vial_drop.wav" weight="1"/>
+	</sound>
+	<sound name="Vial Break">
+	<sample path="quarantine/vial_break.wav" weight="1"/>
+	</sound>
+	<sound name="Shing">
+	<sample path="swordshing.wav" weight="1"/>
+	</sound>
+	<sound name="Fire Sword">
+	<sample path="sword_fire.wav" weight="1"/>
+	</sound>
+	<sound name="Darkness">
+	<sample path="darknessrises.wav" weight="1"/>
+	</sound>
+	<sound name="Metal Scratch">
+	<sample path="metalscratch.wav" weight="1"/>
+	</sound>
+	<sound name="Casette Stinger">
+	<sample path="casettestinger.wav" weight="1"/>
+	</sound>
+	<sound name="Fire Light">
+	<sample path="fire light.wav" weight="1"/>
+	</sound>
+	<sound name="Thunderstorm">
+	<sample path="thunderstorm.wav" weight="1"/>
+	</sound>
+	<sound name="Thunder">
+	<sample path="THUNDER_1.wav" weight="1"/>
+	<sample path="THUNDER_2.wav" weight="2"/>
+	<sample path="THUNDER_3.wav" weight="3"/>
+	</sound>
+	<sound name="Spark">
+	<sample path="lightningpend.wav" weight="1"/>
+	</sound>
+	<sound name="Jail Door">
+	<sample path="quarantine/jail_open.wav" weight="1"/>
+	</sound>
+	<sound name="Portcullis 2">
+	<sample path="quarantine/castleportcullis_substitute.wav" weight="1"/>
+	</sound>
+	<sound name="Metal Footsteps">
+	<sample path="quarantine/metal_footsteps1.wav" weight="1"/>
+	<sample path="quarantine/metal_footsteps2.wav" weight="2"/>
+	<sample path="quarantine/metal_footsteps3.wav" weight="3"/>
+	</sound>
+	<sound name="Whistle Blow">
+	<sample path="clockwork/whistleblow.wav" weight="1"/>
+	</sound>
+	<sound name="Lightning Strike">
+	<sample path="lightningstrike.wav" weight="1"/>
+	</sound>
+	<sound name="Ocean">
+	<sample path="oceanwaves.wav" weight="1"/>
+	</sound>
+	<sound name="Hazel Laugh">
+	<sample path="hazellaugh1.wav" weight="1"/>
+	</sound>
+	<sound name="Hazel Die">
+	<sample path="Hazel Die.wav" weight="1"/>
+	</sound>
+	<sound name="Clock Tick">
+	<sample path="clocktick.wav" weight="1"/>
+	</sound>
+	<sound name="Clock Spin">
+	<sample path="clockspin2.wav" weight="1"/>
+	</sound>
+	<sound name="Loud Bell">
+	<sample path="loudbell.wav" weight="1"/>
+	</sound>
+	<sound name="Bell Ring">
+	<sample path="bellring.wav" weight="1"/>
+	</sound>
+	<sound name="Smush">
+	<sample path="smush.wav" weight="1"/>
+	</sound>
+	<sound name="Falling">
+	<sample path="falling.wav" weight="1"/>
+	</sound>
+	<sound name="Gears Spin">
+	<sample path="gearspin.wav" weight="1"/>
+	</sound>
+	<sound name="Gears Retract">
+	<sample path="gearsretract.wav" weight="1"/>
+	</sound>
+	<sound name="Buzzsaw">
+	<sample path="buzzsawstart.wav" weight="1"/>
+	</sound>
+	<sound name="Eye Clink">
+	<sample path="eyeclink.wav" weight="1"/>
+	</sound>
+	<sound name="Morality Down">
+	<sample path="moralitydown.wav" weight="1"/>
+	</sound>
+	<sound name="Morality Down Small">
+	<sample path="moralitydown2.wav" weight="1"/>
+	</sound>
+	<sound name="Faucet Pour">
+	<sample path="faucetpour.wav" weight="1"/>
+	</sound>
+	<sound name="Clockwork Ambience">
+	<sample path="ambient/Clockwork Ambience.wav" weight="1"/>
+	</sound>
+</sounds>

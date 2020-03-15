@@ -1,0 +1,72 @@
+<shaders>
+ <shader name="Shaders">
+ <parameters>
+	<param name="PlayerPos" type="vec2"/>
+	<param name="Red" type="float"/>
+	<param name="Green" type="float"/>
+	<param name="Blue" type="float"/>
+	<param name="Time" type="float"/>
+ </parameters>
+ <vertex><![CDATA[
+ attribute vec3 Position; 
+ attribute vec4 Color; 
+ attribute vec2 TexCoord; 
+ attribute vec4 RenderData; 
+ attribute float Scale;
+ attribute vec2 PlayerPos;
+ attribute float Time;
+ attribute float Red;
+ attribute float Green;
+ attribute float Blue;
+ varying vec4 Color0; 
+ varying vec2 TexCoord0; 
+ varying vec4 RenderDataOut; 
+ varying float ScaleOut;
+ varying float Rout;
+ varying float Gout;
+ varying float Bout;
+ varying vec2 PlayerPosOut;
+ varying float TimeOut;
+ 
+
+ uniform mat4 Transform; 
+ void main(void) 
+ { 
+  Rout = Red; 
+ Gout = Green; 
+ Bout = Blue; 
+ RenderDataOut = RenderData; 
+ ScaleOut = Scale; // Passing data to fragment shader 
+ PlayerPosOut = PlayerPos; // Passing data to fragment shader
+ TimeOut = Time; // Passing data to fragment shader
+ Color0 = Color; 
+
+
+ TexCoord0 = TexCoord;
+ gl_Position = Transform * vec4(Position.xyz, 1.0); 
+ }
+ ]]></vertex>
+ <fragment><![CDATA[
+ varying lowp vec4 Color0; 
+ varying mediump vec2 TexCoord0; 
+ varying lowp vec4 RenderDataOut;
+ varying lowp float ScaleOut; 
+ varying mediump vec2 PlayerPosOut;
+ varying mediump float Rout;
+ varying mediump float Gout;
+ varying mediump float Bout;
+
+ varying lowp float TimeOut; 
+ uniform sampler2D Texture0; 
+
+ void main(void) 
+ { 
+ vec4 Color = Color0 * texture2D(Texture0, TexCoord0); 
+ Color.r *= 1f * Rout;
+ Color.g *= 1f * Gout;
+ Color.b *= 1f * Bout;
+ gl_FragColor = Color;
+ }
+ ]]></fragment>
+ </shader>
+</shaders>
