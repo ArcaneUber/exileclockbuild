@@ -1,0 +1,4 @@
+
+EXILE_M.GRIDENT = {
+	GLASSPANEL = StageAPI.CustomGrid("Glass Panel", GridEntityType.GRID_DECORATION, nil, "gfx/periwinkle_glass.anm2", "Idle")
+}

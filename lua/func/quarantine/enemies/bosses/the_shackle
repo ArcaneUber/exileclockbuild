@@ -1,0 +1,300 @@
+
+EntityType.CHAINHARPOON = Isaac.GetEntityTypeByName("Chain Harpoon")
+EntityType.THESHACKLE = Isaac.GetEntityTypeByName("The Shackle")
+
+ShackleState = {
+	APPEAR = 0, ---------
+	IDLE = 1,
+	JUMPUP = 2,
+	CARDHOOK = 3,
+	SWINGTHROW = 4,
+	DUALSWING = 5,
+	GRAPPLE = 6,
+	LASER = 7
+}
+
+ShackleChain = { --- HAHA GET IT? CHAIN? NO? ILL LEAVE NOW
+	[ShackleState.IDLE] =	{0.4, 0.2, 0.1, 0, 0.1, 0.1, 0.1),
+	[ShackleState.JUMPUP] =	{0.4, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1),
+	[ShackleState.CARDHOOK] =	{0.1, 0.6, 0.1, 0.1, 0.1, 0.0, 0.0),
+	[ShackleState.SWINGTHROW] =	{0.1, 0.1, 0.1, 0.1, 0.6, 0.0, 0.0),
+	[ShackleState.DUALSWING] =	{0.1, 0.6, 0.1, 0.1, 0.1, 0.0, 0.0),
+	[ShackleState.GRAPPLE] =	{0.1, 0.6, 0.1, 0.1, 0.1, 0.0, 0.0),
+	[ShackleState.LASER] =	{0.1, 0.6, 0.1, 0.1, 0.1, 0.0, 0.0)
+}	
+
+function ShackleTransition(state)
+	local roll = math.random()
+	for i = 1, #ShackleChain do
+		roll = roll - ShackleChain[state][i]
+		if roll <= 0 then
+			return i
+		end
+	end
+	return #ShackleChain
+end
+
+----
+
+function Mod:ShackleUpdate(entity)
+	local game = Game()
+	local data = entity:GetData()
+	local player = Isaac.GetPlayer(0)
+	
+	if entity.Variant == Isaac.GetEntityVariantByName("The Shackle") then
+	
+	local ang = player.Position - entity.Position
+	entity.DepthOffset = 25;
+	
+	if data.State == nil then data.State = 0 end
+	if data.StateFrame == nil then data.StateFrame = 0 end
+	local target = entity:GetPlayerTarget()
+	
+
+	--entity.GridCollisionClass = GridCollisionClass.COLLISION_SOLID
+	entity:AddEntityFlags(EntityFlag.FLAG_NO_KNOCKBACK | EntityFlag.FLAG_NO_PHYSICS_KNOCKBACK)
+	
+	data.StateFrame = data.StateFrame + 1 
+	
+	if data.State == ShackleState.APPEAR and entity:GetSprite():IsFinished("Appear") then
+		data.State = ShackleState.IDLE
+		data.StateFrame = 0
+	elseif data.State == ShackleState.IDLE then --------------------------------------
+	entity:AnimWalkFrame("WalkHori", "WalkVert", 0.1)
+	entity.Pathfinder:FindGridPath(target.Position, 0.7, 1, true)
+		if data.StateFrame == 1 then
+		entity.EntityCollisionClass = EntityCollisionClass.ENTCOLL_PLAYEROBJECTS
+		elseif entity:GetSprite():IsEventTriggered("Shake") then
+		sound:Play(SoundEffect.SOUND_FORESTBOSS_STOMPS,1,0,false,1)
+		Game():ShakeScreen(5,5)
+		elseif data.StateFrame > 130 then
+			data.State = ShackleTransition(data.State)
+			data.StateFrame = 0
+		end
+	elseif data.State == ShackleState.JUMPUP then
+		if data.StateFrame == 1 then
+			entity.Velocity = Vector(0,0)
+			entity:GetSprite():Play("Jump Up", true)
+	elseif entity:GetSprite():IsEventTriggered("Jump") then
+	entity.EntityCollisionClass = EntityCollisionClass.ENTCOLL_NONE
+	entity:AddVelocity((target.Position - entity.Position):Normalized() * 13)
+	sound:Play(SoundEffect.SOUND_FAT_WIGGLE,1,0,false,1)
+	elseif entity:GetSprite():IsEventTriggered("Pound") then
+	entity.Velocity = Vector(0,0)
+	Game():ShakeScreen(7,7)
+			local tear5 = Isaac.Spawn(EntityType.ENTITY_PROJECTILE,0,0,entity.Position + Vector(0,0) ,Vector(0,11),entity):ToProjectile()
+			local tear6 = Isaac.Spawn(EntityType.ENTITY_PROJECTILE,0,0,entity.Position + Vector(0,0) ,Vector(0,-11),entity):ToProjectile()
+			local tear7 = Isaac.Spawn(EntityType.ENTITY_PROJECTILE,0,0,entity.Position + Vector(0,0) ,Vector(11,0),entity):ToProjectile()
+			local tear8 = Isaac.Spawn(EntityType.ENTITY_PROJECTILE,0,0,entity.Position + Vector(0,0) ,Vector(-11,0),entity):ToProjectile()
+	
+	
+	tear5:GetData().RockProj = true
+	tear5:GetData().Variant = Isaac.GetEntityVariantByName("Clockwork Shockwave")
+	tear6:GetData().RockProj = true
+	tear6:GetData().Variant = Isaac.GetEntityVariantByName("Clockwork Shockwave")
+	tear7:GetData().RockProj = true
+	tear7:GetData().Variant = Isaac.GetEntityVariantByName("Clockwork Shockwave")
+	tear8:GetData().RockProj = true
+	tear8:GetData().Variant = Isaac.GetEntityVariantByName("Clockwork Shockwave")
+	
+	sound:Play(SoundEffect.SOUND_ROCK_CRUMBLE,0.7,0,false,0.5)
+	sound:Play(SoundEffect.SOUND_MAGGOT_BURST_OUT,1,0,false,1)
+	elseif entity:GetSprite():IsFinished("Jump Up") then
+			data.State = ShackleTransition(data.State)
+			data.StateFrame = 0
+		end
+	elseif data.State == ShackleState.CARDHOOK then ----------------
+		if data.StateFrame == 1 then
+			entity:GetSprite():Play("CardHook", true)
+		elseif entity:GetSprite():IsEventTriggered("Hook") then
+	local hooktip = Isaac.Spawn(EntityType.CHAINHARPOON, Isaac.GetEntityVariantByName("Chain Harpoon"), 0, entity.Position + Vector(-25,0) , Vector(-21,0), nil)
+	hooktip:ClearEntityFlags(EntityFlag.FLAG_APPEAR)
+	hooktip:GetData().ChainRot = 90
+	hooktip:GetData().SegCount = 12
+	
+	local hooktip2 = Isaac.Spawn(EntityType.CHAINHARPOON, Isaac.GetEntityVariantByName("Chain Harpoon"), 0, entity.Position + Vector(0,-25) , Vector(0,-21), nil)
+	hooktip2:ClearEntityFlags(EntityFlag.FLAG_APPEAR)
+	hooktip2:GetData().Vert = true
+	--hooktip2:GetData().ChainRot = 90
+	hooktip2:GetData().SegCount = 5
+	hooktip2.SpriteRotation = 90
+	
+	local hooktip3 = Isaac.Spawn(EntityType.CHAINHARPOON, Isaac.GetEntityVariantByName("Chain Harpoon"), 0, entity.Position + Vector(0,25) , Vector(0,21), nil)
+	hooktip3:ClearEntityFlags(EntityFlag.FLAG_APPEAR)
+	hooktip3:GetData().Vert = true
+	--hooktip3:GetData().ChainRot = -90
+	hooktip3.SpriteRotation = -90
+	hooktip3:GetData().SegCount = 5
+	elseif entity:GetSprite():IsEventTriggered("Hook2") then
+		local tears = Isaac.FindByType(EntityType.CHAINHARPOON, Isaac.GetEntityVariantByName("Chain Harpoon"), -1, false, false)
+		for _, tear in ipairs(tears) do
+		Isaac.Explode(tear.Position, entity, 20)
+		tear:Remove()
+		end
+	elseif entity:GetSprite():IsFinished("Puff") then
+			data.State = ShackleTransition(data.State)
+			data.StateFrame = 0
+		end ----------
+	elseif data.State == ShackleState.SWINGTHROW then ----------------
+		if data.StateFrame == 1 then
+			entity:GetSprite():Play("SwingThrow", true)
+		elseif entity:GetSprite():IsEventTriggered("Hook") then
+	local firedown = Isaac.Spawn(EntityType.CHAINHARPOON,Isaac.GetEntityVariantByName("Chain Harpoon Swinger"),0,entity.Position + Vector(0,2), Vector(0,0), entity)
+	firedown:GetData().HasParent = true
+	firedown:GetData().Spawner = entity
+	firedown:GetData().DistanceOut = 3
+	firedown:GetData().DistanceRad = 6
+	firedown:GetData().Offset = Vector(0,15)
+	
+	local firedown2 = Isaac.Spawn(EntityType.CHAINHARPOON,Isaac.GetEntityVariantByName("Chain Harpoon Swing Chain"),0,entity.Position + Vector(0,2), Vector(0,0), entity)
+	firedown2:GetData().HasParent = true
+	firedown2:GetData().Spawner = entity
+	firedown2:GetData().DistanceOut = 2
+	firedown2:GetData().DistanceRad = 6
+	firedown2:GetData().Offset = Vector(0,15)
+
+	local firedown3 = Isaac.Spawn(EntityType.CHAINHARPOON,Isaac.GetEntityVariantByName("Chain Harpoon Swing Chain"),0,entity.Position + Vector(0,2), Vector(0,0), entity)
+	firedown3:GetData().HasParent = true
+	firedown3:GetData().Spawner = entity
+	firedown3:GetData().DistanceOut = 1
+	firedown3:GetData().DistanceRad = 6
+	firedown3:GetData().Offset = Vector(0,15)
+	elseif entity:GetSprite():IsEventTriggered("Hook2") then
+		local pos1 = entity.Position - target.Position
+		local Dirvect = pos1:GetAngleDegrees()
+		local tears = Isaac.FindByType(EntityType.CHAINHARPOON, Isaac.GetEntityVariantByName("Chain Harpoon Swinger"), -1, false, false)
+		for _, tear in ipairs(tears) do
+		tear:Remove()
+		end
+		
+		local tears2 = Isaac.FindByType(EntityType.CHAINHARPOON, Isaac.GetEntityVariantByName("Chain Harpoon Swing Chain"), -1, false, false)
+		for _, tear in ipairs(tears2) do
+		tear:Remove()
+		end
+
+	local hooktip = Isaac.Spawn(EntityType.CHAINHARPOON, Isaac.GetEntityVariantByName("Chain Harpoon"), 0, entity.Position + Vector(-5,0),(target.Position - entity.Position):Normalized() * 13, entity)
+	hooktip:ClearEntityFlags(EntityFlag.FLAG_APPEAR)
+	hooktip:GetData().ChainRot = Dirvect
+	hooktip:GetData().SegCount = 12
+
+		elseif entity:GetSprite():IsFinished("SwingThrow") then
+			data.State = ShackleTransition(data.State)
+			data.StateFrame = 0
+		end ----------
+	elseif data.State == ShackleState.DUALSWING then ----------------
+		--entity:AddVelocity((target.Position - entity.Position):Normalized() * 7)
+		if data.StateFrame == 1 then
+			entity:GetSprite():Play("DualSwing", true)
+		elseif entity:GetSprite():IsEventTriggered("Hook") then
+	local firedown = Isaac.Spawn(EntityType.CHAINHARPOON,Isaac.GetEntityVariantByName("Chain Harpoon Swinger"),0,entity.Position + Vector(0,2), Vector(0,0), entity)
+	firedown:GetData().HasParent = true
+	firedown:GetData().Spawner = entity
+	firedown:GetData().DistanceOut = 3
+	firedown:GetData().DistanceRad = 6
+	firedown:GetData().Offset = Vector(0,15)
+	
+	
+	local firedown2 = Isaac.Spawn(EntityType.CHAINHARPOON,Isaac.GetEntityVariantByName("Chain Harpoon Swing Chain"),0,entity.Position + Vector(0,2), Vector(0,0), entity)
+	firedown2:GetData().HasParent = true
+	firedown2:GetData().Spawner = entity
+	firedown2:GetData().DistanceOut = 2
+	firedown2:GetData().DistanceRad = 6
+	firedown2:GetData().Offset = Vector(0,15)
+
+	local firedown3 = Isaac.Spawn(EntityType.CHAINHARPOON,Isaac.GetEntityVariantByName("Chain Harpoon Swing Chain"),0,entity.Position + Vector(0,2), Vector(0,0), entity)
+	firedown3:GetData().HasParent = true
+	firedown3:GetData().Spawner = entity
+	firedown3:GetData().DistanceOut = 1
+	firedown3:GetData().DistanceRad = 6
+	firedown3:GetData().Offset = Vector(0,15)
+	
+	--- LEFT
+	
+	local firedown4 = Isaac.Spawn(EntityType.CHAINHARPOON,Isaac.GetEntityVariantByName("Chain Harpoon Swinger"),0,entity.Position + Vector(0,2), Vector(0,0), entity)
+	firedown4:GetData().HasParent = true
+	firedown4:GetData().Spawner = entity
+	firedown4:GetData().DistanceOut = 3
+	firedown4:GetData().DistanceRad = 6
+	firedown4:GetData().Offset = Vector(0,-15)
+	
+	
+	local firedown5 = Isaac.Spawn(EntityType.CHAINHARPOON,Isaac.GetEntityVariantByName("Chain Harpoon Swing Chain"),0,entity.Position + Vector(0,2), Vector(0,0), entity)
+	firedown5:GetData().HasParent = true
+	firedown5:GetData().Spawner = entity
+	firedown5:GetData().DistanceOut = 2
+	firedown5:GetData().DistanceRad = 6
+	firedown5:GetData().Offset = Vector(0,-15)
+
+	local firedown6 = Isaac.Spawn(EntityType.CHAINHARPOON,Isaac.GetEntityVariantByName("Chain Harpoon Swing Chain"),0,entity.Position + Vector(0,2), Vector(0,0), entity)
+	firedown6:GetData().HasParent = true
+	firedown6:GetData().Spawner = entity
+	firedown6:GetData().DistanceOut = 1
+	firedown6:GetData().DistanceRad = 6
+	firedown6:GetData().Offset = Vector(0,-15)
+	
+	elseif entity:GetSprite():IsEventTriggered("Hook2") then
+	
+		local tears = Isaac.FindByType(EntityType.CHAINHARPOON, Isaac.GetEntityVariantByName("Chain Harpoon Swinger"), -1, false, false)
+		for _, tear in ipairs(tears) do
+		tear:Remove()
+		end
+		
+		local tears2 = Isaac.FindByType(EntityType.CHAINHARPOON, Isaac.GetEntityVariantByName("Chain Harpoon Swing Chain"), -1, false, false)
+		for _, tear in ipairs(tears2) do
+		tear:Remove()
+		end	
+	
+	local hooktip2 = Isaac.Spawn(EntityType.CHAINHARPOON, Isaac.GetEntityVariantByName("Chain Harpoon"), 0, player.Position + Vector(0,-25) , Vector(0,-21), nil)
+	hooktip2:ClearEntityFlags(EntityFlag.FLAG_APPEAR)
+	hooktip2:GetData().Vert = true
+	--hooktip2:GetData().ChainRot = 90
+	hooktip2:GetData().SegCount = 5
+	hooktip2.SpriteRotation = 90
+	
+	local hooktip3 = Isaac.Spawn(EntityType.CHAINHARPOON, Isaac.GetEntityVariantByName("Chain Harpoon"), 0, player.Position + Vector(0,25) , Vector(0,21), nil)
+	hooktip3:ClearEntityFlags(EntityFlag.FLAG_APPEAR)
+	hooktip3:GetData().Vert = true
+	--hooktip3:GetData().ChainRot = -90
+	hooktip3.SpriteRotation = -90
+	hooktip3:GetData().SegCount = 5
+		elseif entity:GetSprite():IsFinished("DualSwing") then
+			data.State = ShackleTransition(data.State)
+			data.StateFrame = 0
+		end ----------
+	elseif data.State == ShackleState.GRAPPLE then
+		if data.StateFrame == 1 then
+			entity:GetSprite():Play("Grapple", true)
+	elseif entity:GetSprite():IsEventTriggered("Hook") then
+		local pos1 = entity.Position - target.Position
+		local Dirvect = pos1:GetAngleDegrees()
+	local hooktip = Isaac.Spawn(EntityType.CHAINHARPOON, Isaac.GetEntityVariantByName("Chain Harpoon"), 0, entity.Position + Vector(-5,0),(target.Position - entity.Position):Normalized() * 13, entity)
+	hooktip:ClearEntityFlags(EntityFlag.FLAG_APPEAR)
+	hooktip:GetData().ChainRot = Dirvect
+	hooktip:GetData().SegCount = 12
+	hooktip:GetData().Grapple = true
+	elseif entity:GetSprite():IsEventTriggered("Pound") then ---- Push The Shackle towards the harpoon
+		entity:AddVelocity((target.Position - entity.Position):Normalized() * 8)
+	elseif entity:GetSprite():IsEventTriggered("Hook2") then ---- Remove the Grappling Hook Harpoon
+		local tears = Isaac.FindByType(EntityType.CHAINHARPOON, Isaac.GetEntityVariantByName("Chain Harpoon"), -1, false, false)
+		for _, tear in ipairs(tears) do
+		if tear:GetData().Grapple == true then
+		tear:Remove()
+		end
+		end
+	elseif entity:GetSprite():IsFinished("Grapple") then
+			data.State = ShackleTransition(data.State)
+			data.StateFrame = 0
+		end---
+	elseif data.State == ShackleState.LASER then ----------------
+		if data.StateFrame == 1 then
+		entity:GetSprite():Play("Laser", true)
+		entity.Velocity = Vector(0,0)
+		elseif entity:GetSprite():IsFinished("Laser") then
+			data.State = ShackleTransition(data.State)
+			data.StateFrame = 0
+		end ----------
+		end
+	end
+end
+
+Mod:AddCallback(ModCallbacks.MC_NPC_UPDATE, Mod.ShackleUpdate, EntityType.THESHACKLE);
