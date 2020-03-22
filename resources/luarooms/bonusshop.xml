@@ -1,0 +1,36 @@
+﻿<!--Converted to ANM2 by Gibbed.Afterbirth.ConvertStage-->
+<stage>
+  <room type="2" variant="0" subtype="0" name="New Room" difficulty="1" weight="1" width="13" height="7" shape="1">
+    <door x="6" y="-1" exists="True" />
+    <door x="-1" y="3" exists="True" />
+    <door x="13" y="3" exists="True" />
+    <door x="6" y="7" exists="True" />
+    <spawn x="2" y="1">
+      <entity type="33" variant="0" subtype="0" weight="1" />
+    </spawn>
+    <spawn x="4" y="1">
+      <entity type="6" variant="10" subtype="0" weight="1" />
+    </spawn>
+    <spawn x="11" y="1">
+      <entity type="33" variant="0" subtype="0" weight="1" />
+    </spawn>
+    <spawn x="6" y="2">
+      <entity type="17" variant="1" subtype="0" weight="1" />
+    </spawn>
+    <spawn x="2" y="4">
+      <entity type="5" variant="150" subtype="0" weight="1" />
+    </spawn>
+    <spawn x="4" y="4">
+      <entity type="5" variant="150" subtype="0" weight="1" />
+    </spawn>
+    <spawn x="6" y="4">
+      <entity type="5" variant="150" subtype="0" weight="1" />
+    </spawn>
+    <spawn x="8" y="4">
+      <entity type="5" variant="150" subtype="0" weight="1" />
+    </spawn>
+    <spawn x="10" y="4">
+      <entity type="5" variant="150" subtype="0" weight="1" />
+    </spawn>
+  </room>
+</stage>

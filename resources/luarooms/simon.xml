@@ -1,0 +1,9 @@
+﻿<!--Converted to ANM2 by Gibbed.Afterbirth.ConvertStage-->
+<stage>
+  <room type="1" variant="0" subtype="0" name="New Room" difficulty="1" weight="1" width="13" height="7" shape="1">
+    <door x="6" y="7" exists="True" />
+    <door x="13" y="3" exists="True" />
+    <door x="-1" y="3" exists="True" />
+    <door x="6" y="-1" exists="True" />
+  </room>
+</stage>
