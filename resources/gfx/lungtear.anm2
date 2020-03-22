@@ -1,0 +1,35 @@
+<AnimatedActor>
+	<Info CreatedBy="Unknown" CreatedOn="9/17/2019 5:10:51 PM" Version="3" Fps="30"/>
+	<Content>
+		<Spritesheets>
+			<Spritesheet Path="tear_lung.png" Id="0"/>
+		</Spritesheets>
+		<Layers>
+			<Layer Name="body" Id="0" SpritesheetId="0"/>
+		</Layers>
+		<Nulls/>
+		<Events/>
+	</Content>
+	<Animations DefaultAnimation="Idle">
+		<Animation Name="Idle" FrameNum="9" Loop="true">
+			<RootAnimation>
+				<Frame XPosition="0" YPosition="0" XScale="100" YScale="100" Delay="1" Visible="true" RedTint="255" GreenTint="255" BlueTint="255" AlphaTint="255" RedOffset="0" GreenOffset="0" BlueOffset="0" Rotation="0" Interpolated="false"/>
+			</RootAnimation>
+			<LayerAnimations>
+				<LayerAnimation LayerId="0" Visible="true">
+					<Frame XPosition="0" YPosition="-1" XPivot="17" YPivot="18" XCrop="-2" YCrop="0" Width="31" Height="31" XScale="100" YScale="100" Delay="1" Visible="true" RedTint="255" GreenTint="255" BlueTint="255" AlphaTint="255" RedOffset="0" GreenOffset="0" BlueOffset="0" Rotation="0" Interpolated="false"/>
+					<Frame XPosition="0" YPosition="-1" XPivot="17" YPivot="18" XCrop="-2" YCrop="0" Width="31" Height="31" XScale="100" YScale="100" Delay="1" Visible="true" RedTint="255" GreenTint="255" BlueTint="255" AlphaTint="255" RedOffset="0" GreenOffset="0" BlueOffset="0" Rotation="30.6930847167969" Interpolated="false"/>
+					<Frame XPosition="0" YPosition="-1" XPivot="17" YPivot="18" XCrop="-2" YCrop="0" Width="31" Height="31" XScale="100" YScale="100" Delay="1" Visible="true" RedTint="255" GreenTint="255" BlueTint="255" AlphaTint="255" RedOffset="0" GreenOffset="0" BlueOffset="0" Rotation="60" Interpolated="false"/>
+					<Frame XPosition="0" YPosition="-1" XPivot="17" YPivot="18" XCrop="-2" YCrop="0" Width="31" Height="31" XScale="100" YScale="100" Delay="1" Visible="true" RedTint="255" GreenTint="255" BlueTint="255" AlphaTint="255" RedOffset="0" GreenOffset="0" BlueOffset="0" Rotation="90" Interpolated="false"/>
+					<Frame XPosition="0" YPosition="-1" XPivot="17" YPivot="18" XCrop="-2" YCrop="0" Width="31" Height="31" XScale="100" YScale="100" Delay="1" Visible="true" RedTint="255" GreenTint="255" BlueTint="255" AlphaTint="255" RedOffset="0" GreenOffset="0" BlueOffset="0" Rotation="125.148529052734" Interpolated="false"/>
+					<Frame XPosition="0" YPosition="-1" XPivot="17" YPivot="18" XCrop="-2" YCrop="0" Width="31" Height="31" XScale="100" YScale="100" Delay="1" Visible="true" RedTint="255" GreenTint="255" BlueTint="255" AlphaTint="255" RedOffset="0" GreenOffset="0" BlueOffset="0" Rotation="166.732711791992" Interpolated="false"/>
+					<Frame XPosition="0" YPosition="-1" XPivot="17" YPivot="18" XCrop="-2" YCrop="0" Width="31" Height="31" XScale="100" YScale="100" Delay="1" Visible="true" RedTint="255" GreenTint="255" BlueTint="255" AlphaTint="255" RedOffset="0" GreenOffset="0" BlueOffset="0" Rotation="219.207977294922" Interpolated="false"/>
+					<Frame XPosition="0" YPosition="-1" XPivot="17" YPivot="18" XCrop="-2" YCrop="0" Width="31" Height="31" XScale="100" YScale="100" Delay="1" Visible="true" RedTint="255" GreenTint="255" BlueTint="255" AlphaTint="255" RedOffset="0" GreenOffset="0" BlueOffset="0" Rotation="255.346603393555" Interpolated="false"/>
+					<Frame XPosition="0" YPosition="-1" XPivot="17" YPivot="18" XCrop="-2" YCrop="0" Width="31" Height="31" XScale="100" YScale="100" Delay="1" Visible="true" RedTint="255" GreenTint="255" BlueTint="255" AlphaTint="255" RedOffset="0" GreenOffset="0" BlueOffset="0" Rotation="314.752563476563" Interpolated="false"/>
+				</LayerAnimation>
+			</LayerAnimations>
+			<NullAnimations/>
+			<Triggers/>
+		</Animation>
+	</Animations>
+</AnimatedActor>
