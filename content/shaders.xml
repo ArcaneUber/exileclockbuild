@@ -62,9 +62,9 @@
  void main(void) 
  { 
  vec4 Color = Color0 * texture2D(Texture0, TexCoord0); 
- Color.r *= 1f * Rout;
- Color.g *= 1f * Gout;
- Color.b *= 1f * Bout;
+ Color.r *= 1.0f * Rout;
+ Color.g *= 1.0f * Gout;
+ Color.b *= 1.0f * Bout;
  gl_FragColor = Color;
  }
  ]]></fragment>
